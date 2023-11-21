@@ -19,7 +19,8 @@ declare function read:get-custom-draw-function ($draw as element(draw)) as funct
     let $loc := $draw/@location/string()
     let $name := $draw/@name/string()
     let $qname := QName($ns, $name)
-    let $module := load-xquery-module($ns, map { "location-hints": $loc })
+		(: Disabled: FontoXPath does not support dynamically loading XQuery modules :)
+    let $module := map{}(: load-xquery-module($ns, map { "location-hints": $loc }) :)
     
     let $reference := map:for-each($module?functions, function ($k, $v) {
         if ($k = $qname) then $v?2 else ()

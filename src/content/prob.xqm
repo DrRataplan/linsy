@@ -31,7 +31,10 @@ function prob:prepare-options (
     $adjust as function(xs:double, array(*)) as array(*)
 ) as array(*)+ {
     prob:adjust-weights($options?1)
-    => for-each-pair($options, $adjust)
+		(: Disabled: FontoXPath does not implement for-each-pair (yet) :)
+    (:
+		 : => for-each-pair($options, $adjust)
+		 :)
 };
 
 (: ---- helper functions ---- :)

@@ -39,5 +39,8 @@
   "overrides": {
     "chokidar": "$chokidar",
     "glob-stream": "$glob-stream"
+  },
+  "dependencies": {
+    "fontoxpath": "^3.30.2"
   }
 }
